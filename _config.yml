@@ -24,13 +24,13 @@ repository               : "liangjindeamo-yuer/liangjindeamo-yuer.github.io"
 author:
   # Biographic information
   avatar           : "1.jpg"
-  name             : "Your Sidebar Name"
+  name             : "Yu Lu"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : ""
+  location         : "Shanghai, China"
+  employer         : "Shanghai Jiao Tong University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "yulu01@sjtu.edu.cn" 
 
   # Academic websites
   academia         : # URL
