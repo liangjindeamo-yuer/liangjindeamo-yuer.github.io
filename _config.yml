@@ -26,9 +26,9 @@ author:
   avatar           : "1.jpg"
   name             : "Yu Lu"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D students in"
+  bio              : "Ph.D student in"
   location         : "Shanghai, China"
-  employer         : "Shanghai Jiao Tong University"
+  employer         : # URL "Shanghai Jiao Tong University"
   uri              : # URL
   email            : "yulu01@sjtu.edu.cn" 
 
