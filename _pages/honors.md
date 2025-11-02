@@ -1,11 +1,9 @@
 ---
 permalink: /honors/
 title: "Honors"
-redirect_from: 
-  - /honors.html
+author_profile: true
 ---
 
-# Awards
 
 ## Academic Awards
 <div style="background:#f6f8fa;padding:12px 14px;border-radius:10px;margin:8px 0;">
