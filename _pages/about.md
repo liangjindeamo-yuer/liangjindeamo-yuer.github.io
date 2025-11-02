@@ -13,7 +13,7 @@ I am a Ph.D student of the <a href="https://minds.sjtu.edu.cn/">  Mobile Intelli
 
 
 
-## Educational experience
+# Educational Experience
 
 | Time              | Institution                     | Major/Field                   | Degree/Stage        | Notes                       |
 | ----------------- | ------------------------------- | ----------------------------- | ------------------- | --------------------------- |
@@ -30,3 +30,4 @@ I am a Ph.D student of the <a href="https://minds.sjtu.edu.cn/">  Mobile Intelli
 | 2015.09 — 2018.06 | 四川省简阳中学 | 高中部      | 高中       | —        |
 | 2018.09 — 2022.06 | 上海交通大学  | 信息安全     | 工学学士     | —        |
 | 2022.09 — 至今      | 上海交通大学  | 计算机科学与技术 | 工学博士（在读） | 导师：薛广涛教授 |
+
