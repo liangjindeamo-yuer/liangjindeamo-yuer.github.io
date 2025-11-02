@@ -9,8 +9,8 @@
 
 main:
 
-  - title: "Awards"
-    url: /Awards/  
+  - title: "Honors"
+    url: /honors/  
 
   - title: "Publications"
     url: /publications/

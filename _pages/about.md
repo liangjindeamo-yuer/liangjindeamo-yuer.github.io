@@ -31,3 +31,9 @@ I am a Ph.D student of the <a href="https://minds.sjtu.edu.cn/">  Mobile Intelli
 | 2018.09 — 2022.06 | 上海交通大学  | 信息安全     | 工学学士     | —        |
 | 2022.09 — 至今      | 上海交通大学  | 计算机科学与技术 | 工学博士（在读） | 导师：薛广涛教授 |
 
+
+# Employment Experience
+
+| Time              | Organization            | Team/Group              | Role            | Location        | Supervisor                                    |
+| ----------------- | ----------------------- | ----------------------- | --------------- | --------------- | --------------------------------------------- |
+| 2023.08 — 2024.03 | Microsoft Research Asia | Shanghai Wireless Group | Research Intern | Shanghai, China | [Prof. Qiu](https://www.cs.utexas.edu/~lili/) |
