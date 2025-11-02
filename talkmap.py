@@ -38,7 +38,8 @@ for file in g:
     title = data['title'].strip()
     venue = data['venue'].strip()
     location = data['location'].strip()
-    description = f"{title}<br />{venue}; {location}"
+    conference = data['conference'].strip()
+    description = f"{conference} <br> {title} at {venue}; {location}"
 
     # Geocode the location and report the status
     try:
