@@ -1,16 +1,16 @@
 ---
-title: "DASIV: Directional Acoustic Sensing based Intelligent Vehicle Interaction System"
-paper_number: 3
-author: Dinghua Zhao*, Juntao Zhou*, Dian Ding<sup>&</sup>, <strong>Yu Lu</strong>, Yijie Li, Hang Yang, Yi-Chao Chen, Guangtao Xue
+title: "AMSER: Accelerate Mobile Speech Emotion Recognition with Signal Compression"
+paper_number: 1
+author: <strong>Yu Lu*</strong>, Ran Wang*, Dian Ding<sup>&</sup>,  Han Zhang, Liyun Zhang, Lanqing Yang, Yi-Chao Chen, Guangtao Xue<sup>&</sup>
 collection: publications
-category: wireless
+category: audio
 type: conference
-permalink: /publication/DASIV
-excerpt: 'In this paper, we propose DASIV, which utilizes the highly directional nature of ultrasonic signals to achieve fine-grained directional acoustic sensing in vehicle environments.'
-date: 2025-01-27
-venue: 'IPCCC (CCF C)'
-paperurl: 'https://liangjindeamo-yuer.github.io/files/DASIV.pdf'
-citation: 'Zhao, Dinghua, et al. "DASIV: Directional Acoustic Sensing based Intelligent Vehicle Interaction System." 2024 IEEE International Performance, Computing, and Communications Conference (IPCCC). IEEE, 2024.'
+permalink: /publication/AMSER
+excerpt: 'This paper proposes AMSER, a real-time speech emotion recognition framework using signal compression and task offloading. AMSER utilizes logarithmic Mel-filter bank coefficients (Fbank) and singular value decomposition (SVD) for feature extraction and compression.'
+date: 2025-03-07
+venue: 'ICASSP (CCF B)'
+paperurl: 'https://liangjindeamo-yuer.github.io/files/AMSER.pdf'
+citation: 'Lu, Yu, et al. "AMSER: Accelerate Mobile Speech Emotion Recognition with Signal Compression." ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2025.'
 ---
 
 
