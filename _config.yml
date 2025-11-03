@@ -85,7 +85,7 @@ publication_category:
     title: 'AI for Health'
   mobileVision:
     title: 'Mobile Vision'
-  Audio:
+  audio:
     title: 'Stream Processing'
   wireless:
     title: 'Wireless Sensing'
