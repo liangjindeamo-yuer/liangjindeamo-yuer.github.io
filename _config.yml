@@ -81,12 +81,17 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
+  medicine:
+    title: 'AI for Health'
+  mobileVision:
+    title: 'Mobile Vision'
+  Audio:
+    title: 'Stream Processing'
+  wireless:
+    title: 'Wireless Sensing'
+  hci:
+    title: 'Human-Computer Interaction'
+
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
