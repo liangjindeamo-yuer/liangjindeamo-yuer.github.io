@@ -16,6 +16,8 @@ author_profile: true
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
     {% assign conference_shown = false %}
+    {% assign journal_shown = false %}
+    {% assign other_shown = false %}
     {% for post in site.publications reversed %}
       {% if post.category != category[0] %}
         {% continue %}
@@ -33,7 +35,23 @@ author_profile: true
           {% assign conference_shown = true %}
         {% endif %}
       {% endunless %}
-
+      <!-- 第一次出现该方向期刊 -->
+      {% unless journal_shown %}
+        {% if post.type == "journal" %}
+          <h3>Journal</h3>
+          <hr />
+          {% assign journal_shown = true %}
+        {% endif %}
+      {% endunless %}
+      <!-- 第一次出现该方向其他 -->
+      {% unless other_shown %}
+        {% if post.type == "other" %}
+          <h3>Poster/Demo/Workshop Papers</h3>
+          <hr />
+          {% assign other_shown = true %}
+        {% endif %}
+      {% endunless %}
+      
       {% include archive-single.html %}
     {% endfor %}
   {% endfor %}
