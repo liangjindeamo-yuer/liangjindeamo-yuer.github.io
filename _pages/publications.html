@@ -14,20 +14,13 @@ author_profile: true
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
     {% assign conference_shown = false %}
     {% assign journal_shown = false %}
     {% assign other_shown = false %}
 
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      <!-- 第一次出现该方向 -->
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
+
+    <h2>{{ category[1].title }}</h2><hr />
+
 
       <!-- 第一次出现该方向会议 -->
       {% for post in site.publications reversed %}
@@ -73,7 +66,8 @@ author_profile: true
       {% endunless %}
       {% include archive-single.html %}
       {% endfor %}
-    {% endfor %}
+
+
   {% endfor %}
 {% else %}
   {% for post in site.publications reversed %}
