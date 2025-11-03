@@ -5,7 +5,7 @@ author_profile: true
 ---
 
 
-## Academic Awards
+<!-- ## Academic Awards
 <div style="background:#f6f8fa;padding:12px 14px;border-radius:10px;margin:8px 0;">
 <strong>Sep 2025</strong> – <em>Excellent PhD Student Scholarship (85th CS Education Development Fund & Yang Yuanqing Education Fund)</em><br>
 <strong>2025年度“85届计算机系教育发展基金暨杨元庆教育基金”优秀博士生奖学金</strong>
@@ -41,5 +41,5 @@ author_profile: true
 <div style="background:#f6f8fa;padding:12px 14px;border-radius:10px;margin:8px 0;">
 <strong>Apr 2025</strong> – <em>Top 400, 9th China Hangzhou College Students Entrepreneurship Competition</em> — “Lingxin Zhizao: An LLM-based One-Stop Intelligent PCB Design & Manufacturing Platform”<br>
 <strong>第九届中国杭州大学生创业大赛 400 强</strong> —— “灵芯智造：基于 LLM 的 PCB 一站式智能设计制造平台”
-</div>
+</div> -->
 
