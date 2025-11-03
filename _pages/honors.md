@@ -1,5 +1,5 @@
 ---
-permalink: /honors/
+permalink: /honorsaa/
 title: "Honors"
 author_profile: true
 ---
