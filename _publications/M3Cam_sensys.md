@@ -1,7 +1,7 @@
 ---
 title: "M3Cam: Extreme Super-resolution via Multi-Modal Optical Flow for Mobile Cameras"
 paper_number: 2
-auhtor: <strong>Yu Lu*</strong>, Dian Ding*, Hao Pan<sup>&</sup>, Yongjian Fu, Liyun Zhang, Feitong Tan, Ran Wang, Yi-Chao Chen, Guangtao Xue, Ju Ren
+author: <strong>Yu Lu*</strong>, Dian Ding*, Hao Pan<sup>&</sup>, Yongjian Fu, Liyun Zhang, Feitong Tan, Ran Wang, Yi-Chao Chen, Guangtao Xue, Ju Ren
 collection: publications
 category: mobileVision
 type: conference
