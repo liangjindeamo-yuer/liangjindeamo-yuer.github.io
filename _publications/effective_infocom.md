@@ -1,5 +1,5 @@
 ---
-title: "1. Effectively Learning Moiré QR Code Decryption from Simulated Data"
+title: "1\. Effectively Learning Moiré QR Code Decryption from Simulated Data"
 collection: publications
 category: mobileVision
 type: conference

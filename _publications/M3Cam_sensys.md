@@ -1,5 +1,5 @@
 ---
-title: "2. M3Cam: Extreme Super-resolution via Multi-Modal Optical Flow for Mobile Cameras"
+title: "2\. M3Cam: Extreme Super-resolution via Multi-Modal Optical Flow for Mobile Cameras"
 collection: publications
 category: mobileVision
 type: conference

@@ -1,5 +1,5 @@
 ---
-title: "3. MODepth: Benchmarking Mobile Multi-frame Monocular Depth Estimation with Optical Image Stabilization"
+title: "3\. MODepth: Benchmarking Mobile Multi-frame Monocular Depth Estimation with Optical Image Stabilization"
 collection: publications
 category: mobileVision
 type: conference
