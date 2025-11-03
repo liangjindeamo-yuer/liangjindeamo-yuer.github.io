@@ -1,17 +1,17 @@
 ---
-title: "HandPad: Make Your Hand an On-the-go Writing Pad via Human Capacitance"
-paper_number: 1
-author: <strong>Yu Lu</strong>, Dian Ding<sup>&</sup>, Hao Pan,Yijie Li,Juntao Zhou,Yongjian Fu, Yongzhao Zhang, Yi-Chao Chen, Guangtao Xue
+title: "M3Cam: Extreme Super-resolution via Multi-Modal Optical Flow for Mobile Cameras"
+paper_number: 2
+author: <strong>Yu Lu*</strong>, Dian Ding*, Hao Pan<sup>&</sup>, Yongjian Fu, Liyun Zhang, Feitong Tan, Ran Wang, Yi-Chao Chen, Guangtao Xue, Ju Ren
 collection: publications
-category: hci
+category: mobileVision
 type: conference
-permalink: /publication/handpad
-excerpt: ' This paper introduces HandPad, the system that turns the hand into an on-the-go touchscreen, which realizes interaction on the hand via human capacitance. HandPad achieves keystroke and handwriting inputs for letters, numbers, and Chinese characters, reducing the dependency on capacitive or pressure sensor arrays.'
-date: 2024-10-11
-venue: 'ACM UIST (CCF A)'
-slidesurl: 'https://liangjindeamo-yuer.github.io/files/UIST_HandPad.pdf'
-paperurl: 'https://liangjindeamo-yuer.github.io/files/handpad.pdf'
-citation: 'Lu, Yu, et al. "HandPad: Make your hand an on-the-go writing pad via human capacitance." Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technology. 2024.'
+permalink: /publication/M3Cam_sensys
+excerpt: 'Our proposed system can generate a 16× SR image from four captured low-resolution images in real-time, with low computational load, low inference latency, and minimal reliance on runtime RAM.'
+date: 2024-11-04
+venue: 'ACM SENSYS (CCF B)'
+slidesurl: 'https://liangjindeamo-yuer.github.io/files/Sensysppt.pdf'
+paperurl: 'https://liangjindeamo-yuer.github.io/files/SenSys2024_M3CAM.pdf'
+citation: 'Lu, Yu, et al. "M3cam: Extreme super-resolution via multi-modal optical flow for mobile cameras." Proceedings of the 22nd ACM Conference on Embedded Networked Sensor Systems. 2024.'
 ---
 
 

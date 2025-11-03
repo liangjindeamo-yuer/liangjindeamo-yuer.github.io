@@ -1,16 +1,17 @@
 ---
-title: "CarbonNet: Enterprise-Level Carbon Emission Prediction with Large-Scale Datasets"
+title: "HandPad: Make Your Hand an On-the-go Writing Pad via Human Capacitance"
 paper_number: 1
-author: Jinghua Tang, Nan Fang, Lanqing Yang<sup>&</sup>, Yuqiao Pei, Ran Wang, Dian Ding, <strong>Yu Lu</strong>, Guangtao Xue
+author: <strong>Yu Lu</strong>, Dian Ding<sup>&</sup>, Hao Pan,Yijie Li,Juntao Zhou,Yongjian Fu, Yongzhao Zhang, Yi-Chao Chen, Guangtao Xue
 collection: publications
-category: others
+category: hci
 type: conference
-permalink: /publication/Carbonnet
-excerpt: 'We propose CarbonNet, a novel firm-level carbon emission prediction scheme. To build large-scale firm-level datasets, we crawled carbon emission data and reporting data (e.g., financial statements) of 3346 companies over 31 years containing 688 data fields, and combined them together.'
-date: 2024-08-05
-venue: 'ICIC (CCF C)'
-paperurl: 'https://liangjindeamo-yuer.github.io/files/carbonnet.pdf'
-citation: 'Tang, Jinghua, et al. "CarbonNet: enterprise-level carbon emission prediction with large-scale datasets." International Conference on Intelligent Computing. Singapore: Springer Nature Singapore, 2024.'
+permalink: /publication/handpad
+excerpt: ' This paper introduces HandPad, the system that turns the hand into an on-the-go touchscreen, which realizes interaction on the hand via human capacitance. HandPad achieves keystroke and handwriting inputs for letters, numbers, and Chinese characters, reducing the dependency on capacitive or pressure sensor arrays.'
+date: 2024-10-11
+venue: 'ACM UIST (CCF A)'
+slidesurl: 'https://liangjindeamo-yuer.github.io/files/UIST_HandPad.pdf'
+paperurl: 'https://liangjindeamo-yuer.github.io/files/handpad.pdf'
+citation: 'Lu, Yu, et al. "HandPad: Make your hand an on-the-go writing pad via human capacitance." Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technology. 2024.'
 ---
 
 
