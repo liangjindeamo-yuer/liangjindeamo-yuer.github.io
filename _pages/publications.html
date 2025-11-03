@@ -18,6 +18,7 @@ author_profile: true
     {% assign conference_shown = false %}
     {% assign journal_shown = false %}
     {% assign other_shown = false %}
+
     {% for post in site.publications reversed %}
       {% if post.category != category[0] %}
         {% continue %}
@@ -27,23 +28,42 @@ author_profile: true
         <h2>{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
       {% endunless %}
+
       <!-- 第一次出现该方向会议 -->
-      {% unless conference_shown %}
-        {% if post.type == "conference" %}
-          <h3>Conference</h3>
-          <hr />
-          {% assign conference_shown = true %}
+      {% for post in site.publications reversed %}
+        {% if post.type != "conference" %}
+          {% continue %}
         {% endif %}
-      {% endunless %}
+        {% unless conference_shown %}
+          {% if post.type == "conference" %}
+            <h3>Conference</h3>
+            <hr />
+            {% assign conference_shown = true %}
+          {% endif %}
+        {% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+
       <!-- 第一次出现该方向期刊 -->
-      {% unless journal_shown %}
-        {% if post.type == "journal" %}
-          <h3>Journal</h3>
-          <hr />
-          {% assign journal_shown = true %}
+      {% for post in site.publications reversed %}
+        {% if post.type != "journal" %}
+          {% continue %}
         {% endif %}
-      {% endunless %}
+        {% unless journal_shown %}
+          {% if post.type == "journal" %}
+            <h3>Journal</h3>
+            <hr />
+            {% assign journal_shown = true %}
+          {% endif %}
+        {% endunless %}
+      {% include archive-single.html %}
+      {% endfor %}
+
       <!-- 第一次出现该方向其他 -->
+       {% for post in site.publications reversed %}
+        {% if post.type != "other" %}
+          {% continue %}
+        {% endif %}
       {% unless other_shown %}
         {% if post.type == "other" %}
           <h3>Poster/Demo/Workshop Papers</h3>
@@ -51,8 +71,8 @@ author_profile: true
           {% assign other_shown = true %}
         {% endif %}
       {% endunless %}
-      
       {% include archive-single.html %}
+      {% endfor %}
     {% endfor %}
   {% endfor %}
 {% else %}
