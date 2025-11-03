@@ -1,6 +1,7 @@
 ---
 title: "Effectively Learning Moiré QR Code Decryption from Simulated Data"
 paper_number: 1
+author: <strong>Yu Lu</strong>, Hao Pan<sup>&</sup>, Feitong Tan, Yi-Chao Chen,Jiadi Yu, Jinghai He, Guangtao Xue<sup>&</sup>
 collection: publications
 category: mobileVision
 type: conference

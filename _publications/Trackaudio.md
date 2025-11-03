@@ -1,5 +1,5 @@
 ---
-title: "3. MODepth: Benchmarking Mobile Multi-frame Monocular Depth Estimation with Optical Image Stabilization"
+title: "Addressing Practical Challenges in Acoustic Sensing To Enable Fast Motion Tracking"
 collection: publications
 category: mobileVision
 type: conference
@@ -8,7 +8,7 @@ excerpt: 'Leveraging multiframe images captured under OIS-controlled lens moveme
 date: 2024-11-04
 venue: 'ACM SIGGRAPH Asia (CCF A)'
 paperurl: 'https://liangjindeamo-yuer.github.io/files/MODepth.pdf'
-citation: 'Lu, Yu, et al. "MODepth: Benchmarking Mobile Multi-frame Monocular Depth Estimation with Optical Image Stabilization. " In SIGGRAPH Asia 2025 Conference Papers. 2025.'
+citation: 'aaa'
 ---
 
 
