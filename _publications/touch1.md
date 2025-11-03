@@ -1,0 +1,16 @@
+---
+title: "Enable Touch-based Communication between Laptop and Smartwatch"
+paper_number: 1
+author: Dian Ding, Yijie Li, Hao Pan, <strong>Yu Lu</strong>, Yi-Chao Chen, Guangtao Xue<sup>&</sup>
+collection: publications
+category: hci
+type: other
+permalink: /publication/Touch1
+excerpt: 'This study introduces TouchHBC, a secure and reliable communication scheme leveraging a smartwatch built-in electrodes. This system establishes a touch-based human communication system utilizing a laptop leakage current. '
+date: 2024-10-05
+venue: 'ACM Ubicomp (CCF A) Poster'
+paperurl: 'https://liangjindeamo-yuer.github.io/files/touch1.pdf'
+citation: 'Ding, Dian, et al. "Enable Touch-based Communication between Laptop and Smartwatch." Companion of the 2024 on ACM International Joint Conference on Pervasive and Ubiquitous Computing. 2024.'
+---
+
+
