@@ -1,6 +1,6 @@
 ---
 title: "Enable Touch-based Communication between Laptop and Smartwatch"
-paper_number: 1
+paper_number: 2
 author: Dian Ding, Yijie Li, Hao Pan, <strong>Yu Lu</strong>, Yi-Chao Chen, Guangtao Xue<sup>&</sup>
 collection: publications
 category: hci
