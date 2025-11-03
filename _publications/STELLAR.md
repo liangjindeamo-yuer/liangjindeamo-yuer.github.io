@@ -1,0 +1,16 @@
+---
+title: "STELLAR: Pacemaker Recognition Using 12-Lead ECG and Spatio-Temporal Harmonic Mechanism"
+paper_number: 2
+author: Han Zhang*, Zeyuan Ding*, Leping Yang, <strong>Yu Lu</strong>, Jiatong Ding, Dian Ding<sup>&</sup>, Yiding Qi, Ruogu Li, Guanghui Gao, Yi-Chao Chen, Guangtao Xue
+collection: publications
+category: medicine
+type: conference
+permalink: /publication/ECG
+excerpt: ''
+date: 2025-10-27
+venue: 'BIBM (CCF B)'
+# paperurl: 'https://liangjindeamo-yuer.github.io/files/DASIV.pdf'
+# citation: 'Zhao, Dinghua, et al. "DASIV: Directional Acoustic Sensing based Intelligent Vehicle Interaction System." 2024 IEEE International Performance, Computing, and Communications Conference (IPCCC). IEEE, 2024.'
+---
+
+
