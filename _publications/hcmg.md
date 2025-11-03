@@ -1,0 +1,16 @@
+---
+title: "HCMG: Human-Capacitance based Micro Gesture for VR/AR"
+paper_number: 1
+author: <strong>Yu Lu</strong>, Dian Ding<sup>&</sup>, Ran Wang, Guangtao Xue
+collection: publications
+category: hci
+type: other
+permalink: /publication/HCMG
+excerpt: 'Building on the foundation of human capacitance, this paper introduces a novel approach termed human capacitance-based micro gesture (HCMG) recognition.'
+date: 2024-10-05
+venue: 'ACM Ubicomp (CCF A) Workshop MIMSVAI'
+paperurl: 'https://liangjindeamo-yuer.github.io/files/HCMG.pdf'
+citation: 'Lu, Yu, et al. "HCMG: Human-Capacitance based Micro Gesture for VR/AR." Companion of the 2024 on ACM International Joint Conference on Pervasive and Ubiquitous Computing. 2024.'
+---
+
+
