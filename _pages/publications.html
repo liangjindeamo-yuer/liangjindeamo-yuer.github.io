@@ -31,7 +31,7 @@ author_profile: true
 
       <!-- 第一次出现该方向会议 -->
       {% for post in site.publications reversed %}
-        {% if post.type != "conference" and post.category != category[0] %}
+        {% if post.type != "conference" or post.category != category[0] %}
           {% continue %}
         {% endif %}
         {% unless conference_shown %}
@@ -46,7 +46,7 @@ author_profile: true
 
       <!-- 第一次出现该方向期刊 -->
       {% for post in site.publications reversed %}
-        {% if post.type != "journal" and post.category != category[0] %}
+        {% if post.type != "journal" or post.category != category[0] %}
           {% continue %}
         {% endif %}
         {% unless journal_shown %}
@@ -61,7 +61,7 @@ author_profile: true
 
       <!-- 第一次出现该方向其他 -->
        {% for post in site.publications reversed %}
-        {% if post.type != "other" and post.category != category[0] %}
+        {% if post.type != "other" or post.category != category[0] %}
           {% continue %}
         {% endif %}
       {% unless other_shown %}
