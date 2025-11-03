@@ -81,8 +81,6 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  medical:
-    title: 'AI for'
   books:
     title: 'Books'
   manuscripts:
