@@ -1,6 +1,7 @@
 ---
 title: "MODepth: Benchmarking Mobile Multi-frame Monocular Depth Estimation with Optical Image Stabilization"
 paper_number: 3
+author: <strong>Yu Lu</strong>, Hao Pan<sup>&</sup>, Dian Ding<sup>&</sup>, Jiatong Ding, Yongjian Fu, Yi-Chao Chen, Ju Ren, Guangtao Xue
 collection: publications
 category: mobileVision
 type: conference
