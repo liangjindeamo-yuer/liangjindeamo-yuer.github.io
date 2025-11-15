@@ -104,7 +104,7 @@ author_profile: true
       {% assign categories = site.publications | map: "category" | uniq | sort %}
       {% for cat in categories %}
         {% if cat %}
-        <option value="{{ cat | downcase }}">{{ cat }}</option>
+        <option value="{{ cat | downcase | strip  }}">{{ cat }}</option>
         {% endif %}
       {% endfor %}
     </select>
@@ -117,7 +117,7 @@ author_profile: true
       {% assign types = site.publications | map: "type" | uniq | sort %}
       {% for t in types %}
         {% if t %}
-        <option value="{{ t | downcase }}">{{ t }}</option>
+        <option value="{{ t | downcase  | strip }}">{{ t }}</option>
         {% endif %}
       {% endfor %}
     </select>
@@ -167,30 +167,28 @@ author_profile: true
 </ol>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('[pub-filter] DOM loaded');
+console.log('[pub-filter] script executed');
 
-  const categoryFilter = document.getElementById('categoryFilter');
-  const typeFilter = document.getElementById('typeFilter');
-  const pubList = document.getElementById('pubList');
+const categoryFilter = document.getElementById('categoryFilter');
+const typeFilter = document.getElementById('typeFilter');
+const pubList = document.getElementById('pubList');
 
-  console.log('[pub-filter] elements', {
-    categoryFilter,
-    typeFilter,
-    pubList
-  });
+console.log('[pub-filter] elements:', {
+  categoryFilter,
+  typeFilter,
+  pubList
+});
 
-  if (!categoryFilter || !typeFilter || !pubList) {
-    console.warn('[pub-filter] some elements not found, abort.');
-    return;
-  }
-
-  const items = Array.prototype.slice.call(pubList.querySelectorAll('.pub-item'));
+if (!categoryFilter || !typeFilter || !pubList) {
+  console.warn('[pub-filter] some elements not found, abort.');
+} else {
+  const items = Array.prototype.slice.call(
+    pubList.querySelectorAll('.pub-item')
+  );
   const countVisibleSpan = document.getElementById('pubCountVisible');
   const countTotalSpan = document.getElementById('pubCountTotal');
 
-  const total = items.length;
-  if (countTotalSpan) countTotalSpan.textContent = total.toString();
+  if (countTotalSpan) countTotalSpan.textContent = items.length.toString();
 
   function updateFilter() {
     const cat = categoryFilter.value.trim().toLowerCase();
@@ -217,9 +215,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (countVisibleSpan) countVisibleSpan.textContent = visibleCount.toString();
   }
 
-  categoryFilter.addEventListener('change', updateFilter);
-  typeFilter.addEventListener('change', updateFilter);
+  categoryFilter.addEventListener('change', function () {
+    console.log('[pub-filter] category changed to', this.value);
+    updateFilter();
+  });
 
+  typeFilter.addEventListener('change', function () {
+    console.log('[pub-filter] type changed to', this.value);
+    updateFilter();
+  });
+
+  // 展开/收起 citation
   pubList.addEventListener('click', function (e) {
     if (e.target && e.target.classList.contains('pub-citation-toggle')) {
       const toggle = e.target;
@@ -237,10 +243,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 初始化一次
   updateFilter();
-});
+}
 </script>
 
-
-<script>
-  alert('JS is running on this page.');
-</script>
