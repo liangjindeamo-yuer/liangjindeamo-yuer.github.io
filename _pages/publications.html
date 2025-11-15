@@ -166,7 +166,11 @@ author_profile: true
   {% endfor %}
 </ol>
 
-<script>
+
+<script src="{{ '/assets/js/publications-filter.js' | relative_url }}"></script>
+
+
+<!-- <script>
 console.log('[pub-filter] script executed');
 
 const categoryFilter = document.getElementById('categoryFilter');
@@ -181,7 +185,8 @@ console.log('[pub-filter] elements:', {
 
 if (!categoryFilter || !typeFilter || !pubList) {
   console.warn('[pub-filter] some elements not found, abort.');
-} else {
+} 
+else {
   const items = Array.prototype.slice.call(
     pubList.querySelectorAll('.pub-item')
   );
@@ -244,5 +249,5 @@ if (!categoryFilter || !typeFilter || !pubList) {
   // 初始化一次
   updateFilter();
 }
-</script>
+</script> -->
 
