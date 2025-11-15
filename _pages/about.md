@@ -14,7 +14,7 @@ I am a Ph.D student of the <a href="https://minds.sjtu.edu.cn/">  Mobile Intelli
 
 # News
 
-* Nov 2025，my paper Aucom is accepted by IEEE TMC.
+* Nov 2025, my paper Aucom is accepted by IEEE TMC.
 * Oct 2025, two papers are accepted by IEEE BIBM 2025.
 * Sep 2025, my paper MODEPTH is accepted by Siggraph Asia 2025.
 * May 2025, my paper Amser+ is accepted by IEEE Internet of Things Journal.
