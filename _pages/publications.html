@@ -174,12 +174,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const typeFilter = document.getElementById('typeFilter');
   const pubList = document.getElementById('pubList');
 
+  console.log('[pub-filter] elements', {
+    categoryFilter,
+    typeFilter,
+    pubList
+  });
+
   if (!categoryFilter || !typeFilter || !pubList) {
-    console.warn('[pub-filter] some elements not found', {
-      categoryFilter,
-      typeFilter,
-      pubList
-    });
+    console.warn('[pub-filter] some elements not found, abort.');
     return;
   }
 
@@ -215,11 +217,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (countVisibleSpan) countVisibleSpan.textContent = visibleCount.toString();
   }
 
-  // 绑定下拉事件
   categoryFilter.addEventListener('change', updateFilter);
   typeFilter.addEventListener('change', updateFilter);
 
-  // 引用展开/收起
   pubList.addEventListener('click', function (e) {
     if (e.target && e.target.classList.contains('pub-citation-toggle')) {
       const toggle = e.target;
