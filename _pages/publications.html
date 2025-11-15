@@ -156,6 +156,7 @@ author_profile: true
         <span class="pub-citation-toggle">Show citation</span>
       {% endif %}
     </div>
+
     {% if pub.citation %}
     <div class="pub-citation" style="display: none;">
       {{ pub.citation }}
@@ -166,63 +167,77 @@ author_profile: true
 </ol>
 
 <script>
-  (function() {
-    const categoryFilter = document.getElementById('categoryFilter');
-    const typeFilter = document.getElementById('typeFilter');
-    const pubList = document.getElementById('pubList');
-    const items = Array.prototype.slice.call(pubList.querySelectorAll('.pub-item'));
-    const countVisibleSpan = document.getElementById('pubCountVisible');
-    const countTotalSpan = document.getElementById('pubCountTotal');
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('[pub-filter] DOM loaded');
 
-    const total = items.length;
-    countTotalSpan.textContent = total.toString();
+  const categoryFilter = document.getElementById('categoryFilter');
+  const typeFilter = document.getElementById('typeFilter');
+  const pubList = document.getElementById('pubList');
 
-    function updateFilter() {
-      const cat = categoryFilter.value.toLowerCase();
-      const type = typeFilter.value.toLowerCase();
-      let visibleCount = 0;
+  if (!categoryFilter || !typeFilter || !pubList) {
+    console.warn('[pub-filter] some elements not found', {
+      categoryFilter,
+      typeFilter,
+      pubList
+    });
+    return;
+  }
 
-      items.forEach(function(item) {
-        const itemCat = (item.getAttribute('data-category') || '').toLowerCase();
-        const itemType = (item.getAttribute('data-type') || '').toLowerCase();
+  const items = Array.prototype.slice.call(pubList.querySelectorAll('.pub-item'));
+  const countVisibleSpan = document.getElementById('pubCountVisible');
+  const countTotalSpan = document.getElementById('pubCountTotal');
 
-        const matchCat = (cat === 'all') || (itemCat === cat);
-        const matchType = (type === 'all') || (itemType === type);
+  const total = items.length;
+  if (countTotalSpan) countTotalSpan.textContent = total.toString();
 
-        if (matchCat && matchType) {
-          item.style.display = '';
-          visibleCount += 1;
-        } else {
-          item.style.display = 'none';
-        }
-      });
+  function updateFilter() {
+    const cat = categoryFilter.value.trim().toLowerCase();
+    const type = typeFilter.value.trim().toLowerCase();
+    console.log('[pub-filter] updateFilter', { cat, type });
 
-      countVisibleSpan.textContent = visibleCount.toString();
-    }
+    let visibleCount = 0;
 
-    // 绑定筛选事件
-    categoryFilter.addEventListener('change', updateFilter);
-    typeFilter.addEventListener('change', updateFilter);
+    items.forEach(function (item) {
+      const itemCat = (item.dataset.category || '').trim().toLowerCase();
+      const itemType = (item.dataset.type || '').trim().toLowerCase();
 
-    // 绑定引用展开/收起事件
-    pubList.addEventListener('click', function(e) {
-      if (e.target && e.target.classList.contains('pub-citation-toggle')) {
-        const toggle = e.target;
-        const citationDiv = toggle.closest('.pub-item').querySelector('.pub-citation');
-        if (!citationDiv) return;
-        if (citationDiv.style.display === 'none' || citationDiv.style.display === '') {
-          citationDiv.style.display = 'block';
-          toggle.textContent = 'Hide citation';
-        } else {
-          citationDiv.style.display = 'none';
-          toggle.textContent = 'Show citation';
-        }
+      const matchCat = (cat === 'all') || (itemCat === cat);
+      const matchType = (type === 'all') || (itemType === type);
+
+      if (matchCat && matchType) {
+        item.style.display = '';
+        visibleCount += 1;
+      } else {
+        item.style.display = 'none';
       }
     });
 
-    // 初始化
-    updateFilter();
-  })();
+    if (countVisibleSpan) countVisibleSpan.textContent = visibleCount.toString();
+  }
+
+  // 绑定下拉事件
+  categoryFilter.addEventListener('change', updateFilter);
+  typeFilter.addEventListener('change', updateFilter);
+
+  // 引用展开/收起
+  pubList.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('pub-citation-toggle')) {
+      const toggle = e.target;
+      const citationDiv = toggle.closest('.pub-item').querySelector('.pub-citation');
+      if (!citationDiv) return;
+      if (citationDiv.style.display === 'none' || citationDiv.style.display === '') {
+        citationDiv.style.display = 'block';
+        toggle.textContent = 'Hide citation';
+      } else {
+        citationDiv.style.display = 'none';
+        toggle.textContent = 'Show citation';
+      }
+    }
+  });
+
+  // 初始化一次
+  updateFilter();
+});
 </script>
 
 
