@@ -1,0 +1,73 @@
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
+
+{% include base_path %}
+
+
+New style rendering if publication categories are defined
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign conference_shown = false %}
+    {% assign journal_shown = false %}
+    {% assign other_shown = false %}
+
+
+    <h2>{{ category[1].title }}</h2><hr />
+
+
+      <!-- 第一次出现该方向会议 -->
+      {% for post in site.publications reversed %}
+        {% if post.type != "conference" or post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% unless conference_shown %}
+          {% if post.type == "conference" %}
+            <h3>Conference</h3>
+            <hr />
+            {% assign conference_shown = true %}
+          {% endif %}
+        {% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+
+      <!-- 第一次出现该方向期刊 -->
+      {% for post in site.publications reversed %}
+        {% if post.type != "journal" or post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% unless journal_shown %}
+          {% if post.type == "journal" %}
+            <h3>Journal</h3>
+            <hr />
+            {% assign journal_shown = true %}
+          {% endif %}
+        {% endunless %}
+      {% include archive-single.html %}
+      {% endfor %}
+
+      <!-- 第一次出现该方向其他 -->
+       {% for post in site.publications reversed %}
+        {% if post.type != "other" or post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+      {% unless other_shown %}
+        {% if post.type == "other" %}
+          <h3>Poster/Demo/Workshop Papers</h3>
+          <hr />
+          {% assign other_shown = true %}
+        {% endif %}
+      {% endunless %}
+      {% include archive-single.html %}
+      {% endfor %}
+
+
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single-pub.html %}
+  {% endfor %}
+{% endif %}
+
+
+
