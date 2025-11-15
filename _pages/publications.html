@@ -228,32 +228,66 @@ author_profile: true
 
 
   <li class="pub-item"
-      data-category="{{ pub.category | default: 'others' | downcase | strip }}"
-      data-type="{{ type_group | downcase | strip }}">
-    <div class="pub-title">{{ pub.title }}</div>
-    <div class="pub-authors">{{ pub.author }}</div>
-    <div class="pub-venue-date">
-      {% if pub.venue %}{{ pub.venue }}{% endif %}
-      {% if pub.date %} · {{ pub.date | date: "%Y-%m-%d" }}{% endif %}
-    </div>
-    <div class="pub-links">
+    data-category="{{ pub.category | default: 'others' | downcase | strip }}"
+    data-type="{{ type_group | default: pub.type | downcase | strip }}">
+
+  <!-- 标题 -->
+  <div class="pub-title">
+    {{ pub.title }}
+  </div>
+
+  <!-- 作者 -->
+  <div class="pub-authors">
+    {{ pub.author }}
+  </div>
+
+  <!-- 期刊/会议 + 年份（只显示年份） -->
+  <div class="pub-venue-date">
+    {% if pub.venue %}{{ pub.venue }}{% endif %}
+    {% if pub.date %} · {{ pub.date | date: "%Y" }}{% endif %}
+  </div>
+
+  <!-- 摘要 -->
+  {% if pub.excerpt %}
+  <span class="pub-excerpt">
+    {{ pub.excerpt }}
+  </span>
+  {% endif %}
+
+  {%- assign slide_url = pub.slideurl | default: pub.slidesurl -%}
+  {%- assign code_url  = pub.codeurl  | default: pub.github | default: pub.repo -%}
+
+  <!-- 最后一排：按钮 + citation 开关 -->
+  <div class="pub-footer">
+    <div class="pub-buttons">
       {% if pub.paperurl %}
-        <a href="{{ pub.paperurl }}" target="_blank" rel="noopener">Paper</a>
+        <a href="{{ pub.paperurl }}" target="_blank" rel="noopener"
+           class="pub-btn pub-btn-primary">Paper</a>
       {% endif %}
-      {% if pub.excerpt %}
-        <span class="pub-excerpt">{{ pub.excerpt }}</span>
+
+      {% if slide_url %}
+        <a href="{{ slide_url }}" target="_blank" rel="noopener"
+           class="pub-btn">Slides</a>
       {% endif %}
-      <br>
-      {% if pub.citation %}
-        <span class="pub-citation-toggle">Show citation</span>
+
+      {% if code_url %}
+        <a href="{{ code_url }}" target="_blank" rel="noopener"
+           class="pub-btn">Code</a>
       {% endif %}
     </div>
+
     {% if pub.citation %}
-    <div class="pub-citation" style="display: none;">
-      {{ pub.citation }}
-    </div>
+      <span class="pub-citation-toggle">Show citation</span>
     {% endif %}
-  </li>
+  </div>
+
+  <!-- citation 内容（可展开/收起） -->
+  {% if pub.citation %}
+  <div class="pub-citation" style="display: none;">
+    {{ pub.citation }}
+  </div>
+  {% endif %}
+</li>
 
   {% endfor %}
 </ol>
