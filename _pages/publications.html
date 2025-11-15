@@ -101,12 +101,19 @@ author_profile: true
     <label for="categoryFilter">Category:</label>
     <select id="categoryFilter">
       <option value="all">All categories</option>
-      {% assign categories = site.publications | map: "category" | uniq | sort %}
+      {%- for pair in site.publication_category -%}
+        {%- assign key = pair[0] -%}
+        {%- assign obj = pair[1] -%}
+        <option value="{{ key | downcase | strip }}">
+          {{ obj.title }}
+        </option>
+      {%- endfor -%}
+      <!-- {% assign categories = site.publications | map: "category" | uniq | sort %}
       {% for cat in categories %}
         {% if cat %}
         <option value="{{ cat | downcase | strip  }}">{{ cat }}</option>
         {% endif %}
-      {% endfor %}
+      {% endfor %} -->
     </select>
   </div>
 
