@@ -13,4 +13,216 @@ author_profile: true
 
 
 
+<style>
+  .pub-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .pub-controls label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  .pub-controls select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .pub-summary {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .pub-list {
+    counter-reset: pub-counter;
+    margin-left: 1.5rem;
+  }
+
+  .pub-item {
+    margin-bottom: 1rem;
+  }
+
+  .pub-title {
+    font-weight: 600;
+  }
+
+  .pub-authors {
+    font-size: 0.95rem;
+    margin-top: 0.15rem;
+  }
+
+  .pub-venue-date {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.15rem;
+  }
+
+  .pub-links {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .pub-links a {
+    margin-right: 0.75rem;
+    text-decoration: none;
+  }
+
+  .pub-links a:hover {
+    text-decoration: underline;
+  }
+
+  .pub-citation {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .pub-citation-toggle {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .pub-controls {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<div class="pub-controls">
+  <div>
+    <label for="categoryFilter">Category:</label>
+    <select id="categoryFilter">
+      <option value="all">All categories</option>
+      {% assign categories = site.publications | map: "category" | uniq | sort %}
+      {% for cat in categories %}
+        {% if cat %}
+        <option value="{{ cat | downcase }}">{{ cat }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label for="typeFilter">Type:</label>
+    <select id="typeFilter">
+      <option value="all">All types</option>
+      {% assign types = site.publications | map: "type" | uniq | sort %}
+      {% for t in types %}
+        {% if t %}
+        <option value="{{ t | downcase }}">{{ t }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="pub-summary">
+    <!-- 统计信息，JS 会自动填充 -->
+    <span id="pubCountVisible"></span> / <span id="pubCountTotal"></span> publications
+  </div>
+</div>
+
+<ol id="pubList" class="pub-list">
+  {% assign pubs = site.publications | sort: "date" | reverse %}
+  {% for pub in pubs %}
+  <li class="pub-item"
+      data-category="{{ pub.category | downcase }}"
+      data-type="{{ pub.type | downcase }}">
+    <div class="pub-title">
+      {{ pub.title }}
+    </div>
+    <div class="pub-authors">
+      {{ pub.author }}
+    </div>
+    <div class="pub-venue-date">
+      {% if pub.venue %}{{ pub.venue }}{% endif %}
+      {% if pub.date %} · {{ pub.date | date: "%Y-%m-%d" }}{% endif %}
+    </div>
+    <div class="pub-links">
+      {% if pub.paperurl %}
+        <a href="{{ pub.paperurl }}" target="_blank" rel="noopener">Paper</a>
+      {% endif %}
+      {% if pub.excerpt %}
+        <span class="pub-excerpt">{{ pub.excerpt }}</span>
+      {% endif %}
+      {% if pub.citation %}
+        <span class="pub-citation-toggle">Show citation</span>
+      {% endif %}
+    </div>
+    {% if pub.citation %}
+    <div class="pub-citation" style="display: none;">
+      {{ pub.citation }}
+    </div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+
+<script>
+  (function() {
+    const categoryFilter = document.getElementById('categoryFilter');
+    const typeFilter = document.getElementById('typeFilter');
+    const pubList = document.getElementById('pubList');
+    const items = Array.prototype.slice.call(pubList.querySelectorAll('.pub-item'));
+    const countVisibleSpan = document.getElementById('pubCountVisible');
+    const countTotalSpan = document.getElementById('pubCountTotal');
+
+    const total = items.length;
+    countTotalSpan.textContent = total.toString();
+
+    function updateFilter() {
+      const cat = categoryFilter.value.toLowerCase();
+      const type = typeFilter.value.toLowerCase();
+      let visibleCount = 0;
+
+      items.forEach(function(item) {
+        const itemCat = (item.getAttribute('data-category') || '').toLowerCase();
+        const itemType = (item.getAttribute('data-type') || '').toLowerCase();
+
+        const matchCat = (cat === 'all') || (itemCat === cat);
+        const matchType = (type === 'all') || (itemType === type);
+
+        if (matchCat && matchType) {
+          item.style.display = '';
+          visibleCount += 1;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      countVisibleSpan.textContent = visibleCount.toString();
+    }
+
+    // 绑定筛选事件
+    categoryFilter.addEventListener('change', updateFilter);
+    typeFilter.addEventListener('change', updateFilter);
+
+    // 绑定引用展开/收起事件
+    pubList.addEventListener('click', function(e) {
+      if (e.target && e.target.classList.contains('pub-citation-toggle')) {
+        const toggle = e.target;
+        const citationDiv = toggle.closest('.pub-item').querySelector('.pub-citation');
+        if (!citationDiv) return;
+        if (citationDiv.style.display === 'none' || citationDiv.style.display === '') {
+          citationDiv.style.display = 'block';
+          toggle.textContent = 'Hide citation';
+        } else {
+          citationDiv.style.display = 'none';
+          toggle.textContent = 'Show citation';
+        }
+      }
+    });
+
+    // 初始化
+    updateFilter();
+  })();
+</script>
+
 
