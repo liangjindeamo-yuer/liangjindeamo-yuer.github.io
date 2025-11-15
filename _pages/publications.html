@@ -121,12 +121,10 @@ author_profile: true
     <label for="typeFilter">Type:</label>
     <select id="typeFilter">
       <option value="all">All types</option>
-      {% assign types = site.publications | map: "type" | uniq | sort %}
-      {% for t in types %}
-        {% if t %}
-        <option value="{{ t | downcase  | strip }}">{{ t }}</option>
-        {% endif %}
-      {% endfor %}
+      {%- assign type_groups = "Conference,Journal,Other" | split: "," -%}
+      {%- for g in type_groups -%}
+        <option value="{{ g | downcase | strip }}">{{ g }}</option>
+      {%- endfor -%}
     </select>
   </div>
 
@@ -136,7 +134,49 @@ author_profile: true
   </div>
 </div>
 
+
+
+
 <ol id="pubList" class="pub-list">
+  {% assign pubs = site.publications | sort: "date" | reverse %}
+  {% for pub in pubs %}
+
+  {%- assign raw_type = pub.type | downcase | strip -%}
+  {%- assign type_group = site.publication_type[raw_type] | default: 'Other' -%}
+
+
+  <li class="pub-item"
+      data-category="{{ pub.category | default: 'others' | downcase | strip }}"
+      data-type="{{ type_group | downcase | strip }}">
+    <div class="pub-title">{{ pub.title }}</div>
+    <div class="pub-authors">{{ pub.author }}</div>
+    <div class="pub-venue-date">
+      {% if pub.venue %}{{ pub.venue }}{% endif %}
+      {% if pub.date %} · {{ pub.date | date: "%Y-%m-%d" }}{% endif %}
+    </div>
+    <div class="pub-links">
+      {% if pub.paperurl %}
+        <a href="{{ pub.paperurl }}" target="_blank" rel="noopener">Paper</a>
+      {% endif %}
+      {% if pub.excerpt %}
+        <span class="pub-excerpt">{{ pub.excerpt }}</span>
+      {% endif %}
+      {% if pub.citation %}
+        <span class="pub-citation-toggle">Show citation</span>
+      {% endif %}
+    </div>
+    {% if pub.citation %}
+    <div class="pub-citation" style="display: none;">
+      {{ pub.citation }}
+    </div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+
+
+
+<!-- <ol id="pubList" class="pub-list">
   {% assign pubs = site.publications | sort: "date" | reverse %}
   {% for pub in pubs %}
   <li class="pub-item"
@@ -171,7 +211,7 @@ author_profile: true
     {% endif %}
   </li>
   {% endfor %}
-</ol>
+</ol> -->
 
 
 <script src="{{ '/assets/js/publications-filter.js' | relative_url }}"></script>

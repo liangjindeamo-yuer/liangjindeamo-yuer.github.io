@@ -94,6 +94,13 @@ publication_category:
   others:
     title: 'Big Data and Others'
 
+publication_type:
+  conference: "Conference"
+  journal: "Journal"
+  demo: "Other"
+  poster: "Other"
+  worshop: "Other"
+
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
