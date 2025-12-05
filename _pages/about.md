@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D student of the <a href="https://minds.sjtu.edu.cn/">  Mobile Intelligent Networks and Systems (Minds) Lab </a>, Shanghai, since 2022. And I received the B.Eng major in Information Security from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> in 2022. And currently, research on the Internet of Things (IoT), artificial intelligence (AI), mobile computing has been my ongoing pursuit.
+I am a Ph.D student of the <a href="http://minds.geestack.com/">  Mobile Intelligent Networks and Systems (Minds) Lab </a>, Shanghai, since 2022. And I received the B.Eng major in Information Security from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> in 2022. And currently, research on the Internet of Things (IoT), artificial intelligence (AI), mobile computing has been my ongoing pursuit.
 
 我是上海交通大学计算机学院Minds实验室2022级直博生。我于2022年获上海交通大学信息安全专业学士学位。目前的研究领域为以移动计算为核心的物联网与人工智能技术。
 
