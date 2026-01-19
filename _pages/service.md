@@ -7,6 +7,7 @@ author_profile: true
 
 ## Reviewer
 
+- Reviewer of [IEEE TMC 2025](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7755).
 - Reviewer of [ACM CHI 2026](https://chi2026.acm.org/).
 - Reviewer of [IEEE ICME 2025](https://2025.ieeeicme.org/).
 - Reviewer of [BIBM 2024](https://ieeebibm.org/BIBM2024/), [BIBM 2025](https://biod.whu.edu.cn/bibm2025/).
